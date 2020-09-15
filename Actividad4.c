@@ -1,6 +1,7 @@
 #include <stdio.h>
 void capturar()
 {
+    system("CLS");
     int n[5],suma=0;
     for(int i=0;i<5;i++)//guardamos los enteros
     {printf("Inserte el entero en el espacio : %i \n", i+1);
@@ -16,10 +17,17 @@ void capturar()
     system("CLS");
 }
 
+void mostrar(int n, char cadena[])
+{
+    system("CLS");
+    for(size_t i=0;i<n;i++)
+    {printf("%s",cadena);}
+}
 
 int main()
 {
-    char opc;
+    char opc,cadena[50];
+    int veces;
     do
     {
         printf("1. Capturar enteros \n");
@@ -34,6 +42,14 @@ int main()
         case '1':
         capturar();
             break;
+        case '2':
+        printf("Inserte una cadena de caracteres \n");
+        fgets(cadena,sizeof(cadena),stdin);
+        fflush(stdin);
+        printf("Cuantas veces \n");
+        scanf("%i",&veces);
+        mostrar(veces,cadena);
+        break;
         
         }
     } while (opc!= '0');
